@@ -10,14 +10,16 @@ function calcular(){
     var numero2 = parseFloat(document.Formu.segundo.value);
     
     if (numero1 == numero2) {
-        var num_3 = valor_a * valor_b;
-    } else if (valor_a > valor_b) {
-        var num_3 = valor_a - valor_b;
+        var total = numero1 * numero2;
+    } else if (numero1 > numero2) {
+        var total = numero1 - numero2;
     } else {
-        var num_3 = valor_a + valor_b;
+        var total = numero1 + numero2;
     }
 
-    document.formulario.final_num.value = num_3;
+    var limite = total.toFixed(2);
+
+    document.Formu.total.value = limite;
 }
 
 function validar(){

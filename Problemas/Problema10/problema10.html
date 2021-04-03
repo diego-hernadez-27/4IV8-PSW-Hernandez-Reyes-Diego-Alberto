@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 10</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="./JS/operaciones.js"></script>
+</head>
+
+<body>
+
+    <section class="main">
+
+        <header>
+            <img class="ballena" src="./IMAGENES/R1d26b9c482732473758b39b288a3776b.png" alt="">
+            <nav>
+                <ul class="head">
+                    <li class="banco">
+                        <p style="font-size: 40px; color: rgb(255, 255, 255);">Banco Nacional de Ballenas</p>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <aside>
+            <br>
+            <p>Tarjeta | Ahorro | Inversion | Nomina | Seguros</p>
+            <hr color="orange" size="5">
+            <br>
+            <center>Calcular la utilidad que un trabajador recibe en el reparto anual de utilidades si este se le asigna
+                como un porcentaje de su salario mensual que depende de su antigüedad en la empresa de acuerdo con la
+                sig. Tabla:
+
+                Tiempo Utilidad
+                Menos de 1 año
+                1 año o más y menos de 2 años
+                2 años o más y menos de 5 años
+                5 años o más y menos de 10 años
+                10 años o más 5% del salario
+                7% del salario
+                10% del salario
+                15% del salario
+                20% del salario
+            </center>
+            <br>
+            <br>
+            <form name="Formu">
+                <table style="width: 44.6%;">
+                    <caption>
+                        Ingrese los datos requeridos
+                    </caption>
+                    <tr>
+                        <td>
+                            Ingresar el sueldo mensual (pesos)
+                        </td>
+                        <td class="entrada">
+                            <input type="text" name="dinero" placeholder="0" oninput="maxlengthNumber(this);"
+                                onkeypress="return solonumeros2(event)" id="NoVacio">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ingresar los años trabajando en la empresa
+                        </td>
+                        <td class="entrada">
+                            <input type="text" name="anos" placeholder="0" oninput="maxlengthNumber2(this);"
+                                onkeypress="return solonumeros(event)" id="NoVacio2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <center><input type="button" value="CALCULAR" name="op" onclick="validar()"></center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Sueldo total (pesos)
+                        </td>
+                        <td class="salida">
+                            <input type="text" name="total" readonly="readonly" placeholder="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            La utilidad (pesos)
+                        </td>
+                        <td class="salida">
+                            <input type="text" name="utilidad" readonly="readonly" placeholder="0">
+                        </td>
+                    </tr>
+                    <td colspan="2">
+                        <center><input type="button" value="BORRAR" name="lim" onclick="limpiar()"></center>
+                    </td>
+                    </tr>
+                </table>
+            </form>
+        </aside>
+
+        <footer>
+            <a
+                href="C:\Users\25666\Desktop\Escuela\Programación\4to semestre\P y Servicios Web\4IV8-PSW-Hernandez-Reyes-Diego-Alberto\Problemas\Index.html">
+                <img src="./IMAGENES/R2f0e9d62738b39ba1c6d29afdfc7bffb.png" class="Regresar">
+            </a>
+        </footer>
+
+    </section>
+
+    <script>
+        function maxlengthNumber(obj) {
+            console.log(obj.value)
+            if (obj.value.length > 7) {
+                obj.value = obj.value.slice(0, 7)
+            }
+        }
+
+        function maxlengthNumber2(obj) {
+            console.log(obj.value)
+            if (obj.value.length > 2) {
+                obj.value = obj.value.slice(0, 2)
+            }
+        }
+
+        function solonumeros(e) {
+            key = e.keyCode || e.which;
+            teclado = String.fromCharCode(key);
+            numeros = "0123456789";
+            eseciales = "8-37-38-46"
+            teclado_especial = false;
+            for (var i in eseciales) {
+                if (key == eseciales[i]) {
+                    teclado_especial = true;
+                }
+            }
+            if (numeros.indexOf(teclado) == -1 && !teclado_especial) {
+                return false;
+            }
+        }
+
+        function solonumeros2(e) {
+            key = e.keyCode || e.which;
+            teclado = String.fromCharCode(key);
+            numeros = ".0123456789";
+            eseciales = "8-37-38-46"
+            teclado_especial = false;
+            for (var i in eseciales) {
+                if (key == eseciales[i]) {
+                    teclado_especial = true;
+                }
+            }
+            if (numeros.indexOf(teclado) == -1 && !teclado_especial) {
+                return false;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
