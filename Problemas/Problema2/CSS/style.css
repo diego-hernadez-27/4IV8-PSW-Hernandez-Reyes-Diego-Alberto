@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: aquamarine;
+}
+
+html{
+    scroll-behavior: smooth;
+    background-color: black;
+    background-color: blue;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banco{
+    float: left;
+    list-style: none;
+    padding: 10px;
+}
+
+nav{
+    float: right;
+    margin-top: 2%;
+    margin-right: 2%;
+}
+
+header{
+    background-color: rgba(127, 255, 212, 0.33);
+}
+
+img{
+    width: 180px;
+    margin-left: 5%;
+}
+
+aside{
+    padding: 1rem;
+}
+
+p{
+    color: antiquewhite;
+    font-size: 250%;
+}
+
+table{
+    background-color: blueviolet;
+    font-size: 30px;
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+td{
+    border: 3px solid yellow;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+caption{
+    padding-top: 10px;
+    font-style: oblique;
+    background-color: rgb(98, 26, 165);
+}
+
+input{
+    background-color: blueviolet;
+    height: 32px;
+    width: 100px;
+}

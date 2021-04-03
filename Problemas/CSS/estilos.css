@@ -1,0 +1,23 @@
+.main-container{
+    background-image: url(../Imagenes/lake-backgrounds-bridge.jpg);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+nav{
+    color: aliceblue;
+    padding: 1rem;
+}
+
+article{
+    position: relative;
+    border: 6px;
+    background-color: rgba(0, 255, 255, 0.172);
+    padding: 5pt;
+    width: 99%;
+}
+
+li{
+    list-style-type:none;
+}

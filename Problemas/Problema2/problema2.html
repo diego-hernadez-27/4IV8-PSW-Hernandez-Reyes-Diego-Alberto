@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 2</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="./JS/operaciones.js"></script>
+</head>
+
+<body>
+
+    <section class="main">
+
+        <header>
+            <img class="ballena" src="./IMAGENES/R1d26b9c482732473758b39b288a3776b.png" alt="">
+            <nav>
+                <ul class="head">
+                    <li class="banco">
+                        <p style="font-size: 40px; color: rgb(255, 255, 255);">Banco Nacional de Ballenas</p>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <aside>
+            <br>
+            <p>Tarjeta | Ahorro | Inversion | Nomina | Seguros</p>
+            <hr color="orange" size="5">
+            <br>
+            <center>Un vendedor recibe un sueldo base más un 10 % extra por comisión de sus ventas, el vendedor desea
+                saber cuánto dinero obtendrá por concepto de comisiones por las tres ventas que realiza en el mes y el
+                total que recibirá en el mes tomando en cuenta su sueldo base y comisiones.</center>
+            <br>
+            <br>
+            <form name="Formu">
+                <table style="width: 44.6%;">
+                    <caption>
+                        Ingrese los datos requeridos
+                    </caption>
+                    <tr>
+                        <td>
+                            Ingrese el sueldo inicial (pesos)
+                        </td>
+                        <td class="entrada">
+                            <input type="text" name="dinero" placeholder="$0" oninput="maxlengthNumber(this);"
+                                onkeypress="return solonumeros(event)" id="NoVacio">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Numero de ventas
+                        </td>
+                        <td class="entrada">
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <center><input type="button" value="CALCULAR" name="op" onclick="validar()"></center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Las comisiones (pesos)
+                        </td>
+                        <td class="salida">
+                            <input type="text" name="comisiones" readonly="readonly" placeholder="$0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Sueldo total con las comisiones (pesos)
+                        </td>
+                        <td class="salida">
+                            <input type="text" name="total" readonly="readonly" placeholder="$0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <center><input type="button" value="BORRAR" name="lim" onclick="limpiar()"></center>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </aside>
+
+        <footer>
+
+        </footer>
+
+    </section>
+
+    <script>
+        function maxlengthNumber(obj) {
+            console.log(obj.value)
+            if (obj.value.length > 5) {
+                obj.value = obj.value.slice(0, 5)
+            }
+        }
+
+        function maxlengthNumber2(obj) {
+            console.log(obj.value)
+            if (obj.value.length > 2) {
+                obj.value = obj.value.slice(0, 2)
+            }
+        }
+
+        function solonumeros(e) {
+            key = e.keyCode || e.which;
+            teclado = String.fromCharCode(key);
+            numeros = "0123456789";
+            eseciales = "8-37-38-46"
+            teclado_especial = false;
+            for (var i in eseciales) {
+                if (key == eseciales[i]) {
+                    teclado_especial = true;
+                }
+            }
+            if (numeros.indexOf(teclado) == -1 && !teclado_especial) {
+                return false;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
