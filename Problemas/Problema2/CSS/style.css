@@ -72,3 +72,19 @@ input{
     height: 32px;
     width: 100px;
 }
+
+footer{
+    text-align: center;
+}
+
+.Regresar{
+    width: 50px;
+    margin-top: 40px;
+}
+
+header{
+    background-color: rgba(127, 255, 212, 0.33);
+    text-align: center;
+    padding: 2rem;
+    font-size: 50px;
+}

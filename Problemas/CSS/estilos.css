@@ -16,8 +16,20 @@ article{
     background-color: rgba(0, 255, 255, 0.172);
     padding: 5pt;
     width: 99%;
+    background-color: rgba(144, 144, 255, 0.309);
 }
 
 li{
     list-style-type:none;
+    font-size: 30px;
+}
+
+a{
+    color: rgb(216, 100, 22);
+}
+
+footer{
+    font-size: 50px;
+    background-color: rgba(0, 255, 255, 0.398);
+    padding: 2rem;
 }
