@@ -54,10 +54,28 @@ and open the template in the editor.
             <br>
             
             <div class="containerActualizar">
-                <h1>tarea wiiii deberan de agregar la css y js correspondiente a los formularios</h1>
-                <br>
-                <h1>deberan de agregar la funcionalidad de poder realizar una actualizacion a los datos:
-                nombre, appat, apmat, edad, correo</h1>
+                <form name="formulario" method="get" action="Actualizar">
+                    <label>ID del registro:</label>
+                    <input type="number" name="idactualizar" >
+                    <br>
+                    <label>Nuevo Nombre:</label>
+                    <input type="text" name="newnombre">
+                    <br>
+                    <label>Nuevo Apellido Paterno:</label>
+                    <input type="text" name="newappat">
+                    <br>
+                    <label>Nuevo Apellido Materno:</label>
+                    <input type="text" name="newapmat">
+                    <br>
+                    <label>Edad:</label>
+                    <input type="number" name="newedad" min="01" max="99" size="2">
+                    <br>
+                    <label>Correo:</label>          
+                    <input type="email" name="newcorreo">
+                    <br>
+                    <input type="submit" value="Actualizar Usuarios">
+                    <input type="reset" value="Borrar Actualizacion"> 
+                </form>
             </div>
             
         </div>
