@@ -6,72 +6,72 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>CRUD</title>
+        <script src="../web/JS/Formulariojs.js"></script>
+        <link rel="stylesheet" href="../web/CSS/estilos.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="container">
             <div class="containerRegistro">
-                <form name="formulario" method="post" action="Registro">
+                <form name="formulario" id="formulario" method="post" action="Registro" onsubmit="return validar();">
                     <label>Nombre:</label>
-                    <input type="text" name="nombre" >
+                    <input type="text" name="nombre" id="nombre">
                     <br>
                     <label>Apellido Paterno:</label>
-                    <input type="text" name="appat" >
+                    <input type="text" name="appat" id="appat">
                     <br>
                     <label>Apellido Materno:</label>
-                    <input type="text" name="apmat" >
+                    <input type="text" name="apmat" id="apmat">
                     <br>
                     <label>Edad:</label>
-                    <input type="number" name="edad" min="01" max="99" size="2">
+                    <input type="number" name="edad" id="edad" min="01" max="99" size="2">
                     <br>
                     <label>Correo:</label>          
-                    <input type="email" name="correo" >
+                    <input type="email" name="correo" id="correo">
                     <br>
-                    <input type="submit" value="Registro de Usuarios" >
+                    <input type="submit" value="Registro de Usuarios">
                     <input type="reset" value="Borrar Registro" >
                 </form> 
             </div>
             <br>
             <div class="containerConsulta">
                 <br>
-                <form method="get" name="consultarregistro" action="Consultar">
+                <form method="get" id="formulario" name="formulario" action="Consultar">
                     <input type="submit" value="Consultar Tabla Usuarios" >
                 </form>
             </div>
             <br>
             <div class="containerEliminar">
                 <br>
-                <form method="post" name="formularioeliminar" action="Eliminar">
+                <form method="post" id="formulario" name="formulario" action="Eliminar" onsubmit="return formuEliminar();">
                     <label>ID del Usuario a Eliminar</label>
-                    <input type="number" name="ideliminar">
+                    <input type="number" name="ideliminar" id="id">
                     <br>
-                    <input type="submit" value="Eliminar ">
+                    <input type="submit" value="Eliminar">
                 </form>
-            </div>
-            
+            </div> 
             <br>
-            
             <div class="containerActualizar">
-                <form name="formulario" method="get" action="Actualizar">
+                <form name="formulario" id="formulario" method="get" action="Actualizar" onsubmit="return validar2();">
                     <label>ID del registro:</label>
-                    <input type="number" name="idactualizar" >
+                    <input type="number" name="idactualizar" id="idactualizar">
                     <br>
                     <label>Nuevo Nombre:</label>
-                    <input type="text" name="newnombre">
+                    <input type="text" name="newnombre" id="newnombre">
                     <br>
                     <label>Nuevo Apellido Paterno:</label>
-                    <input type="text" name="newappat">
+                    <input type="text" name="newappat" id="newappat">
                     <br>
                     <label>Nuevo Apellido Materno:</label>
-                    <input type="text" name="newapmat">
+                    <input type="text" name="newapmat" id="newapmat">
                     <br>
                     <label>Edad:</label>
-                    <input type="number" name="newedad" min="01" max="99" size="2">
+                    <input type="number" name="newedad" id="newedad" min="01" max="99" size="2">
                     <br>
                     <label>Correo:</label>          
-                    <input type="email" name="newcorreo">
+                    <input type="email" name="newcorreo" id="newcorreo">
                     <br>
                     <input type="submit" value="Actualizar Usuarios">
                     <input type="reset" value="Borrar Actualizacion"> 
