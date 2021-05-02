@@ -7,77 +7,92 @@ and open the template in the editor.
 <html>
     <head>
         <title>CRUD</title>
-        <script src="../web/JS/Formulariojs.js"></script>
-        <link rel="stylesheet" href="../web/CSS/estilos.css">
+        <script src="./JS/Formulariojs.js"></script>
+        <link rel="stylesheet" href="./CSS/estilos.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body background="./IMAGENES/Fondo_alt.jpg">
+        
         <div class="container">
+            <br>
+            <br>
+            <br>
+            <center><p style="font-size: 60px; color: #24303c; font-family: calibri">El mejor CRUD del mundo</p></center>
             <div class="containerRegistro">
+                <h1>Registro</h1>
+                <br>
                 <form name="formulario" id="formulario" method="post" action="Registro" onsubmit="return validar();">
                     <label>Nombre:</label>
-                    <input type="text" name="nombre" id="nombre">
+                    <input type="text" name="nombre" id="nombre" class="Entrada">
                     <br>
                     <label>Apellido Paterno:</label>
-                    <input type="text" name="appat" id="appat">
+                    <input type="text" name="appat" id="appat" class="Entrada">
                     <br>
                     <label>Apellido Materno:</label>
-                    <input type="text" name="apmat" id="apmat">
+                    <input type="text" name="apmat" id="apmat" class="Entrada">
                     <br>
                     <label>Edad:</label>
-                    <input type="number" name="edad" id="edad" min="01" max="99" size="2">
+                    <input type="number" name="edad" id="edad" min="01" max="99" size="2" class="Entrada">
                     <br>
                     <label>Correo:</label>          
-                    <input type="email" name="correo" id="correo">
+                    <input type="email" name="correo" id="correo" class="Entrada">
                     <br>
-                    <input type="submit" value="Registro de Usuarios">
-                    <input type="reset" value="Borrar Registro" >
+                    <input type="submit" value="Registro de Usuarios" class="boton">
+                    <input type="reset" value="Borrar Registro" class="boton">
                 </form> 
             </div>
             <br>
+            <br>
             <div class="containerConsulta">
+                <h1>Consultar Registros</h1>
                 <br>
                 <form method="get" id="formulario" name="formulario" action="Consultar">
-                    <input type="submit" value="Consultar Tabla Usuarios" >
+                    <input type="submit" value="Consultar Tabla Usuarios" class="boton">
                 </form>
             </div>
             <br>
+            <br>
             <div class="containerEliminar">
+                <h1>Eliminar Rgistro</h1>
                 <br>
                 <form method="post" id="formulario" name="formulario" action="Eliminar" onsubmit="return formuEliminar();">
                     <label>ID del Usuario a Eliminar</label>
-                    <input type="number" name="ideliminar" id="id">
+                    <input type="number" name="ideliminar" id="id" class="Entrada">
                     <br>
-                    <input type="submit" value="Eliminar">
+                    <input type="submit" value="Eliminar" class="boton">
                 </form>
             </div> 
             <br>
+            <br>
             <div class="containerActualizar">
+                <h1>Actualizar Rgistro</h1>
+                <br>
                 <form name="formulario" id="formulario" method="get" action="Actualizar" onsubmit="return validar2();">
                     <label>ID del registro:</label>
-                    <input type="number" name="idactualizar" id="idactualizar">
+                    <input type="number" name="idactualizar" id="idactualizar" class="Entrada">
                     <br>
                     <label>Nuevo Nombre:</label>
-                    <input type="text" name="newnombre" id="newnombre">
+                    <input type="text" name="newnombre" id="newnombre" class="Entrada">
                     <br>
                     <label>Nuevo Apellido Paterno:</label>
-                    <input type="text" name="newappat" id="newappat">
+                    <input type="text" name="newappat" id="newappat" class="Entrada">
                     <br>
                     <label>Nuevo Apellido Materno:</label>
-                    <input type="text" name="newapmat" id="newapmat">
+                    <input type="text" name="newapmat" id="newapmat" class="Entrada">
                     <br>
                     <label>Edad:</label>
-                    <input type="number" name="newedad" id="newedad" min="01" max="99" size="2">
+                    <input type="number" name="newedad" id="newedad" min="01" max="99" size="2" class="Entrada">
                     <br>
                     <label>Correo:</label>          
-                    <input type="email" name="newcorreo" id="newcorreo">
+                    <input type="email" name="newcorreo" id="newcorreo" class="Entrada">
                     <br>
-                    <input type="submit" value="Actualizar Usuarios">
-                    <input type="reset" value="Borrar Actualizacion"> 
+                    <input type="submit" value="Actualizar Usuarios" class="boton">
+                    <input type="reset" value="Borrar Actualizacion" class="boton"> 
                 </form>
             </div>
-            
+                
+            <br>
         </div>
 
     </body>

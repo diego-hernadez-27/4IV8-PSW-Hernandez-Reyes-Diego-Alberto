@@ -15,37 +15,38 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import javax.servlet.ServletConfig;
+
 /**
  *
  * @author Admin
  */
 public class Consultar extends HttpServlet {
-    
+
     private Connection con;
     private Statement set;
     private ResultSet rs;
-    
-    public void init(ServletConfig cfg) throws ServletException{
-        
+
+    public void init(ServletConfig cfg) throws ServletException {
+
         String URL = "jdbc:mysql://localhost/registro4iv8";
         String userName = "root";
         String password = "admin";
-        
-        try{
-            
+
+        try {
+
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(URL, userName, password);
             set = con.createStatement();
             System.out.println("Conexion exitosa");
-            
-        }catch (Exception e){
-            
+
+        } catch (Exception e) {
+
             System.out.println("Conexion no exitosa");
             System.out.println(e.getMessage());
             System.out.println(e.getStackTrace());
-            
+
         }
-        
+
     }
 
     /**
@@ -59,7 +60,7 @@ public class Consultar extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -80,59 +81,68 @@ public class Consultar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Consultar</title>");            
+            out.println("<title>Servlet Consultar</title>");
+            out.println("<link rel='stylesheet' href='./CSS/respuesta.css>'");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Tabla General de Usuarios</h1>");
             out.println("<table border='2'>"
-                        + "<thead>"
-                            + "<tr><th>ID</th>"
-                            + "<th>Nombre Completo</th>"
-                            + "<th>Edad</th>"
-                            + "<th>Email</th></tr>"
-                        + "</thead>");
-            
-            try{
-                
+                    + "<thead>"
+                    + "<tr><th>ID</th>"
+                    + "<th>Nombre Completo</th>"
+                    + "<th>Edad</th>"
+                    + "<th>Email</th></tr>"
+                    + "</thead>");
+
+            try {
+
                 String nom, appat, apmat, correo;
                 int edad, id;
-                
+
                 String q = "select * from mregistro";
-                
+
                 set = con.createStatement();
                 rs = set.executeQuery(q);
-                
-                while(rs.next()){
-                    
+
+                out.println("<img clas='mensaje' src='./IMAGENES/Palomita.png'>"
+                        + "<br>");
+                out.println("<h1>Consulta Exitosa<h1>"
+                        + "<br>");
+
+                while (rs.next()) {
+
                     id = rs.getInt("id_usu");
                     nom = rs.getString("nom_usu");
                     appat = rs.getString("appat_usu");
                     apmat = rs.getString("apmat_usu");
                     edad = rs.getInt("edad_usu");
                     correo = rs.getString("correo_usu");
-                    
+
                     out.println("<tbody>"
                             + "<tr><td>" + id + "</td>"
                             + "<td>" + nom + " " + appat + " " + apmat + "</td>"
                             + "<td>" + edad + "</td>"
-                            + "<td>" + correo +"</td></tr>"
-                                + "</tbody>");
-                    
+                            + "<td>" + correo + "</td></tr>"
+                            + "</tbody>");
+
                 }
-                
+
                 rs.close();
                 set.close();
-                
+
                 System.out.println("Consulta Exitosa");
-                
-            }catch (Exception e){
-                
+
+            } catch (Exception e) {
+
                 System.out.println("Error al realizar la consulta");
                 System.out.println(e.getMessage());
                 System.out.println(e.getStackTrace());
-                
+                out.println("<img clas=mensaje' src='./IMAGENES/Tache.png'>"
+                        + "<br>");
+                out.println("<h1>Consulta no exitosa<h1>");
+
             }
-            
+
             out.println("</table>");
             out.println("<br>"
                     + "<a href='index.html'>Regresar a la pagina principal</a>");
@@ -152,7 +162,7 @@ public class Consultar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
     /**
@@ -160,20 +170,19 @@ public class Consultar extends HttpServlet {
      *
      * @return a String containing servlet description
      */
-    
-    public void destroy(){
-        
-        try{
-                
+    public void destroy() {
+
+        try {
+
             con.close();
-                      
-        }catch(Exception e){
-                
+
+        } catch (Exception e) {
+
             super.destroy();
-                
+
         }
     }
-    
+
     @Override
     public String getServletInfo() {
         return "Short description";

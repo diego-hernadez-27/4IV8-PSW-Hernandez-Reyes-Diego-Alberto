@@ -89,7 +89,8 @@ public class Actualizar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Actualizar</title>");            
+            out.println("<title>Servlet Actualizar</title>");     
+            out.println("<link rel='stylesheet' href='./CSS/respuesta.css>'"); 
             out.println("</head>");
             out.println("<body>");
             
@@ -119,6 +120,8 @@ public class Actualizar extends HttpServlet {
                 
             }catch (Exception e){
                 
+                out.println("<img clas=mensaje' src='./IMAGENES/Tache.png'>"
+                        + "<br>");
                 out.println("<h1>Usuario No Eliminado</h1>"
                         + "<br>"
                         + "<a href='index.html'>Regresar a la pagina principal</a>");

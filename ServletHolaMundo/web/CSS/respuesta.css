@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2/05/2021, 01:46:17 PM
+    Author     : Admin
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    background-color: #24303c;
+    text-align: center;
+    font-family: 'calibri';
+    font-size: 40px;
+}
+
+.mensaje{
+    width: 300px;
+    height: 300px;
+}
+
+a{
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a:hover{
+    color: yellow;
+}
+
